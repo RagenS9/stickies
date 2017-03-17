@@ -6,7 +6,7 @@ class Stickie extends React.Component {
         return (
             <Layout>
                 <div>
-                    <h2>Hello Stickie</h2>
+
                 </div> 
             </Layout>
         )

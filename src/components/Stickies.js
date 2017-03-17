@@ -3,6 +3,7 @@ import Layout from './Layout';
 import Nav from './Nav';
 import AddStickie from './AddStickie';
 import Stickie from './Stickie';
+import StickieEdit from './StickieEdit';
 // import { connect } from 'react-redux'
 // import { browserHistory } from 'react-router'
 
@@ -18,9 +19,7 @@ class Stickies extends React.Component {
     render() {
         return (
             <Layout>
-            <Nav></Nav>
                 <div>
-                    <h2>Hello Stickies</h2>
                 </div>
             </Layout>
         )

@@ -6,7 +6,7 @@ class Start extends React.Component {
         return (
             <Layout>
                 <div>
-                    <h2>Hello Start</h2>
+
                 </div> 
             </Layout>
         )

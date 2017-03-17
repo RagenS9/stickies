@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+img {
+    width: 100%;
+}
+
+.nav {
+    padding-top: 30px; 
+}
+
+.logo {
+    max-width: 170px;
+}
+
+.layoutTitle {
+    /*font-family: 'Poppins', sans-serif;*/
+    /*font-family: 'Open Sans', sans-serif;*/
+    /*font-family: 'Gloria Hallelujah', cursive;*/
+    font-family: 'Montserrat', sans-serif;
+    font-size: 70px; 
+    color: #FF5000;
+    text-shadow: 0px 1px black;
+    /*letter-spacing: 1px; */
+}
