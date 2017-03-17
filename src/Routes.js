@@ -11,30 +11,28 @@ import store from './Reducers'
 const history = syncHistoryWithStore(browserHistory, store)
 
 // Load page view components
-import Stickies from './components/Stickies';
-import Start from './components/Start';
-import AddStickie from './components/AddStickie';
-import StickieEdit from './components/StickieEdit';
+import Stickstrs from './components/Stickstrs';
+// import Start from './components/Start';
+import AddStickstr from './components/AddStickstr';
+// import StickstrEdit from './components/StickstrEdit';
 
-//QQCollin, Ragen: not sure if we did the route paths right. 
+// <Route path="/start" component={Start} />
 
 // Configure routes
 class Routes extends React.Component {
     render() {
         return <Provider store={store}>
             <Router history={history}>
-                <Route path="/" component={Stickies} />
-                <Route path="/start" component={Start} />
-                <Route path="/addstickie" component={AddStickie} />
-                <Route path="/stickieedit" component={StickieEdit} />
+                <Route path="/" component={Stickstrs} />
+                <Route path="/addstickstr" component={AddStickstr} />
             </Router>
         </Provider>
     }
-
+                // <Route path="/stickstredit" component={StickstrEdit} />
     // render() {
     //     return <Provider store={store}>
     //         <Router history={history}>
-    //             <Route path="/" component={Todos} />
+    //             <Route path="/" component={Stickstrs} />
     //         </Router>
     //     </Provider>
     // }

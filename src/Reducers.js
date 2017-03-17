@@ -4,14 +4,14 @@ import { routerReducer } from 'react-router-redux'
 
 // Initial shared state
 const initialSharedState = {
-    stickies: []
+    stickstrs: []
 }
 
 // Reducers
 function state(state = initialSharedState, action = {}) {
     switch (action.type) {
-        case 'STICKIES_UPDATE':
-            return { ...state, stickies: action.body }
+        case 'STICKSTRS_UPDATE':
+            return { ...state, stickstrs: action.body }
         default:
             return state
     }
