@@ -29,13 +29,6 @@ class Routes extends React.Component {
         </Provider>
     }
                 // <Route path="/stickstredit" component={StickstrEdit} />
-    // render() {
-    //     return <Provider store={store}>
-    //         <Router history={history}>
-    //             <Route path="/" component={Stickstrs} />
-    //         </Router>
-    //     </Provider>
-    // }
 }
 
 export default Routes

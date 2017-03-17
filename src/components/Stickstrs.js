@@ -1,13 +1,10 @@
 import React from 'react';
-import Layout from './Layout';
-// import Nav from './Nav';
+import Heading from './Heading';
 import AddStickstr from './AddStickstr';
 import Stickstr from './Stickstr';
 // import StickstrEdit from './StickstrEdit';
 import { connect } from 'react-redux'
-import { browserHistory } from 'react-router'
 import store from '../Reducers'
-
 
 class Stickstrs extends React.Component {
 
@@ -18,9 +15,7 @@ class Stickstrs extends React.Component {
         super(props)
 
 //Bind custom methods to this object context
-        this.addStickstr = this.addStickstr.bind(this) 
         this.getStickstrs = this.getStickstrs.bind(this)
-        // this.toggleComplete = this.toggleComplete.bind(this)
     }
 
 //react lifecycle methods
@@ -30,42 +25,31 @@ class Stickstrs extends React.Component {
 
 //storage methods
     getStickstrs() {
-        store.get("newStickstr")
+        store.get('newStickstr')
         // Put the stickstr array in redux, must have a type: 'STICKSTRS' for our Reducer to do the correction action, and a body property with our stickstrs array in it
-        .then(stickstrs => this.props.dispatch({type: 'STICKSTRS_UPDATE', body: stickstrs}))
+        .then(stickstrs => this.props.dispatch({type: 'STICKSTRS', body: stickstrs}))
     }
-
-//need to move addStickstr back to AddStickstr
-    addStickstr(description, category) {
-        if (noteTitle !== '' && noteBody !== '' && noteTags !== '' && noteURL !== '') {
-            store.set('newStickstr')
-            .then(this.getStickstrs)  
-        }
-    }
-
-// probably will have an if statement instead of the turinaries???
-    //   toggleComplete(stickstrId, isComplete) {
-    //     fetch('/api/v1/stickstrs/' + stickstrId + '/' + (isComplete ? 'complete' : 'incomplete'))
-    //     .then(this.getStickstrs)
-    // }
 
     render() {
         let stickstrs = this.props.sharedStickstrs.map((stickstr, key) => <Stickstr key={key} {...stickstr} />)
 
         if (stickstrs.length === 0) {
-            stickstrs = <Layout>
-            <div className="row">
-                <div className="col-xs-12">
-                    <h3>Welcome to Stickstr! We help you organize and save your notes and ideas.</h3>
-                </div>
-                <div className="alert alert-success text-center">Please click the "Add Stickstr" button to add a new Stickstr note.
-                </div>
-            </div>
-            </Layout>
+            stickstrs =  <div className="alert alert-success text-center">Please click the "Add Stickstr" button to add a new Stickstr note.</div>
+            // <div>
+            // <Heading />
+            // <div className="row">
+            //     <div className="col-xs-12">
+            //         <h3>Welcome to Stickstr! We help you organize and save your notes and ideas.</h3>
+            //     </div>
+            //     <div className="alert alert-success text-center">Please click the "Add Stickstr" button to add a new Stickstr note.
+            //     </div>
+            // </div>
+            // </div>
         }
 
         return (
-            <Layout>
+            <div>
+            <Heading />
             <AddStickstr addStickstr={this.addStickstr} />
             <h3>All Stickstrs</h3>
                 <div className="row">
@@ -75,7 +59,7 @@ class Stickstrs extends React.Component {
                         </ul>                    
                     </div>
                 </div>
-            </Layout>
+                </div>
         )
     }
 }

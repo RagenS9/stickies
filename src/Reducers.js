@@ -10,7 +10,7 @@ const initialSharedState = {
 // Reducers
 function state(state = initialSharedState, action = {}) {
     switch (action.type) {
-        case 'STICKSTRS_UPDATE':
+        case 'STICKSTRS':
             return { ...state, stickstrs: action.body }
         default:
             return state

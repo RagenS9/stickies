@@ -1,7 +1,7 @@
 import React from 'react';
 import { browserHistory } from 'react-router'
 
-class Layout extends React.Component {
+class Heading extends React.Component {
     render() {
         return (
             <div className="container">
@@ -23,4 +23,4 @@ class Layout extends React.Component {
     }
 }
 
-export default Layout;
+export default Heading;
