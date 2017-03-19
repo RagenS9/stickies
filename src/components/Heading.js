@@ -11,9 +11,9 @@ class Heading extends React.Component {
                     </div>
 
                     <div className="col-xs-6 nav">
-                        <div className="btn-group">
-                        <button className="btn btn-default" type="button" onClick={() => browserHistory.push('/')}>All Stickstrs</button>
-                        <button className="btn btn-default" type="button" onClick={() => browserHistory.push('/addstickstr')}>Add Stickstr</button>
+                        <div className="btn-group pull-right">
+                            <button className="btn btn-default" type="button" onClick={() => browserHistory.push('/')}>All Stickstrs</button>
+                            <button className="btn btn-default" type="button" onClick={() => browserHistory.push('/addstickstr')}>Add Stickstr</button>
                         </div>
                     </div>
 

@@ -1,5 +1,5 @@
 // Load Redux
-import { createStore, combineReducers } from 'redux'
+import { compose, createStore, combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
 
 // Initial shared state
@@ -18,6 +18,7 @@ function state(state = initialSharedState, action = {}) {
 }
 
 // Combine reducers into a single store
+const composeEnhanced = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
   combineReducers({
     state: state,

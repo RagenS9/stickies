@@ -1,10 +1,12 @@
 import React from 'react';
 import Heading from './Heading';
-import AddStickstr from './AddStickstr';
 import Stickstr from './Stickstr';
-// import StickstrEdit from './StickstrEdit';
-import { connect } from 'react-redux'
-import store from '../Reducers'
+import AddStickstr from './AddStickstr';
+import store from 'store';
+// import EditStickstr from './EditStickstr';
+// import store from '../Reducers'
+import { browserHistory } from 'react-router'
+import { connect } from 'react-redux';
 
 class Stickstrs extends React.Component {
 
@@ -25,41 +27,43 @@ class Stickstrs extends React.Component {
 
 //storage methods
     getStickstrs() {
-        store.get('newStickstr')
+        let stickstrs = store.get('stickstrs')
         // Put the stickstr array in redux, must have a type: 'STICKSTRS' for our Reducer to do the correction action, and a body property with our stickstrs array in it
-        .then(stickstrs => this.props.dispatch({type: 'STICKSTRS', body: stickstrs}))
+        this.props.dispatch({type: 'STICKSTRS', body: stickstrs})
     }
 
     render() {
+
+        // QQRAGEN: add editButton method/function thingie here maybe?
+
         let stickstrs = this.props.sharedStickstrs.map((stickstr, key) => <Stickstr key={key} {...stickstr} />)
 
         if (stickstrs.length === 0) {
-            stickstrs =  <div className="alert alert-success text-center">Please click the "Add Stickstr" button to add a new Stickstr note.</div>
-            // <div>
-            // <Heading />
-            // <div className="row">
-            //     <div className="col-xs-12">
-            //         <h3>Welcome to Stickstr! We help you organize and save your notes and ideas.</h3>
-            //     </div>
-            //     <div className="alert alert-success text-center">Please click the "Add Stickstr" button to add a new Stickstr note.
-            //     </div>
-            // </div>
-            // </div>
+            stickstrs =  <div>
+            <div className="container">
+                <div className="row">
+                    <div className="col-xs-8 col-xs-offset-2 alert alert-success text-center">
+                        <h2>Welcome to Stickstr!</h2>
+                        <h3>We help you organize and save your notes and ideas. <br/>Please click the "Add Stickstr" button to add a new Stickstr.</h3>
+                    </div>
+                </div>
+            </div>
+            </div>
         }
 
         return (
             <div>
-            <Heading />
-            <AddStickstr addStickstr={this.addStickstr} />
-            <h3>All Stickstrs</h3>
-                <div className="row">
-                    <div className="col-xs-4 StickstrsCard">
-                        <ul className="list-group">
-                            {stickstrs}
-                        </ul>                    
+                <Heading />
+                <Stickstr stickstr={this.stickstr} />
+                    <div className="container card">
+                        <div className="row">
+                            <div className="col-xs-3 col-md-4">
+                             {stickstrs}
+                            </div>
+                        </div>
+                        
                     </div>
-                </div>
-                </div>
+            </div>
         )
     }
 }
@@ -67,6 +71,12 @@ class Stickstrs extends React.Component {
 
 //export the component 
 // Map shared Redux state to props
+// const mapStateToProps = (redux) => {
+//     return {
+//         sharedStickstrs: redux.state.stickstrs
+//     }
+// }
+
 const mapStateToProps = (redux) => {
     return {
         sharedStickstrs: redux.state.stickstrs

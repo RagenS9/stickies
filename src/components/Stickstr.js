@@ -1,33 +1,29 @@
 import React from 'react';
-import store from '../Reducers'
+import store from 'store';
+import { browserHistory } from 'react-router'
 
 class Stickstr extends React.Component {
 
 
     render() {
 
-// QQRAGEN: add editStickstr and deleteStickstr method/function thingies here maybe? then move these columns into the return below.
-                //         <div className="row">
-                //     <div className="col-xs-6">
-                //         <span className="input-group-btn">
-                //             <button className="btn btn-default" type="button" onClick={() => this.onClick(this.props.editStickstr)}>Edit</button>
-                //         </span>                        
-                //     </div>
-                //     <div className="col-xs-6 push-right">
-                //         <span className="input-group-btn">
-                //             <button className="btn btn-default" type="button" onClick={() => this.onClick(this.props.deleteStickstr)}>Delete</button>
-                //         </span>  
-                //     </div>
-                // </div>
-        return <div>
-
-            <div className="stickstrBuild">
-                <h2>{this.props.noteTitle}</h2>
-                <p>{this.props.noteBody}</p>
-                <p>{this.props.noteURL}</p>
-                <ul><li>{this.props.noteTags}</li></ul>
-            </div>
-        </div>
+        return (
+                <div className="container stickstrCardContent">
+                    <div className="panel panel-default">
+                        <div className="panel-heading">
+                            <h3>{this.props.noteTitle}</h3>
+                        </div>
+                        <div className="panel-body">
+                            <p id="body" className="form-control">{this.props.noteBody}</p>
+                            <p type="text" className="form-control" id="url">{this.props.noteURL}</p>
+                            <p type="text" className="form-control" id="tags">{this.props.noteTags}</p>
+                        </div>
+                        <div className="panel-footer">
+                            <button type="button" className="btn btn-primary editButton" onClick={() => browserHistory.push('/editstickstr')}>Edit Stickstr</button>
+                        </div>
+                    </div>
+                </div>
+        )
     }
 }
 

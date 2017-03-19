@@ -14,7 +14,7 @@ const history = syncHistoryWithStore(browserHistory, store)
 import Stickstrs from './components/Stickstrs';
 // import Start from './components/Start';
 import AddStickstr from './components/AddStickstr';
-// import StickstrEdit from './components/StickstrEdit';
+import EditStickstr from './components/EditStickstr';
 
 // <Route path="/start" component={Start} />
 
@@ -25,10 +25,10 @@ class Routes extends React.Component {
             <Router history={history}>
                 <Route path="/" component={Stickstrs} />
                 <Route path="/addstickstr" component={AddStickstr} />
+                <Route path="/editstickstr" component={EditStickstr} />
             </Router>
         </Provider>
     }
-                // <Route path="/stickstredit" component={StickstrEdit} />
 }
 
 export default Routes
