@@ -12,11 +12,11 @@ const history = syncHistoryWithStore(browserHistory, store)
 
 // Load page view components
 import Stickstrs from './components/Stickstrs';
-// import Start from './components/Start';
+import Start from './components/Start';
 import AddStickstr from './components/AddStickstr';
 import EditStickstr from './components/EditStickstr';
 
-// <Route path="/start" component={Start} />
+
 
 // Configure routes
 class Routes extends React.Component {
@@ -24,6 +24,7 @@ class Routes extends React.Component {
         return <Provider store={store}>
             <Router history={history}>
                 <Route path="/" component={Stickstrs} />
+                <Route path="/start" component={Start} />
                 <Route path="/addstickstr" component={AddStickstr} />
                 <Route path="/editstickstr" component={EditStickstr} />
             </Router>
