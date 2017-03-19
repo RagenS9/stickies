@@ -2,12 +2,8 @@ import React from 'react';
 import Heading from './Heading';
 import store from '../Reducers'
 
-// QQRAGEN: add deleteStickstr method/function thingie here maybe? Have to put the this.onClick part into the  delete button. and the add button functiony stuff into that button, too. 
-                //     <div className="col-xs-6 push-right">
-                //         <span className="input-group-btn">
-                //             <button className="btn btn-default" type="button" onClick={() => this.onClick(this.props.deleteStickstr)}>Delete</button>
-                //         </span>  
-                //     </div>
+// QQRAGEN: add deleteStickstr method/function thingie here
+
 class EditStickstr extends React.Component {
     render() {
         return <div>
@@ -43,8 +39,8 @@ class EditStickstr extends React.Component {
                         </div>
 
                         <div className="panel-footer">
-                            <button type="button" className="btn btn-danger deleteButton" onClick={() => this.onClick(this.props.deleteStickstr)}>Delete Stickstr</button>
-                            <button type="button" className="btn btn-primary saveButton pull-right" onClick={() => this.onClick(this.props.AddStickstr)}>Save Stickstr</button>
+                            <button type="button" className="btn btn-danger deleteButton" onClick={() => this.onClick(this.props.deleteStickstr)}>Delete</button>
+                            <button type="button" className="btn btn-primary saveButton pull-right" onClick={() => this.onClick(this.props.AddStickstr)}>Save</button>
                         </div>
                     </div>
                 </div>

@@ -71,7 +71,7 @@ class AddStickstr extends React.Component {
 
         
         return <div>
-        <Heading />
+            <Heading />
                 <div className="container stickstrCard">
                     <div className="panel panel-default">
                         <div className="panel-heading">
@@ -107,11 +107,11 @@ class AddStickstr extends React.Component {
                         </div>
 
                         <div className="panel-footer">
-                            <button id="saveButton" type="button" className="btn btn-success" onClick={() => this.onClick(this.props.AddStickstr)}>Save Stickstr</button>
+                            <button id="saveButton" type="button" className="btn btn-success" onClick={() => this.onClick(this.props.AddStickstr)}>Save</button>
                         </div>
                     </div>
                 </div>
-            </div>
+        </div>
     }
 }
 
