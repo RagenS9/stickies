@@ -2,10 +2,7 @@ import React from 'react';
 import Heading from './Heading';
 import Stickstr from './Stickstr';
 import Start from './Start';
-// import AddStickstr from './AddStickstr';
 import store from 'store';
-// import EditStickstr from './EditStickstr';
-// import store from '../Reducers'
 import { browserHistory } from 'react-router'
 import { connect } from 'react-redux';
 
@@ -34,7 +31,7 @@ class Stickstrs extends React.Component {
     }
 
     render() {
-        let stickstrs = this.props.sharedStickstrs.map((stickstr, key) => <Stickstr key={key} index={key} {...stickstr} />) // don't really understand this line, still. Or map. Or where key came from.
+        let stickstrs = this.props.sharedStickstrs.map((stickstr, key) => <Stickstr key={key} index={key} {...stickstr} />) 
 
 //this is to do searching
         // let stickstrs = this.props.redux.stickstrs
@@ -71,8 +68,6 @@ class Stickstrs extends React.Component {
 }
 
 //export the component 
-// I don't know what this is or why it was in the todos, but I put it here, too.
-
 const mapStateToProps = (redux) => {
     return {
         sharedStickstrs: redux.state.stickstrs

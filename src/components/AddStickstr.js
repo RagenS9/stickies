@@ -43,8 +43,7 @@ class AddStickstr extends React.Component {
 
     addStickstr(noteTitle, noteBody, noteURL, noteTags) {
         if (noteTitle !== '' && noteBody !== '' && noteURL !== '' && noteTags !== '' ) {
-            let stickstr = store.get('stickstr')
-            // let stickstr = store.set('stickstr') //this is what I had originally. don't we need to set it before we can get it?
+            let stickstr = store.get('stickstrs')
 
             if ( ! stickstr) {
                 stickstr = [];
@@ -60,16 +59,13 @@ class AddStickstr extends React.Component {
             };
             stickstr.push(newStickstr);
 
-            store.set('stickstr', stickstr);
+            store.set('stickstrs', stickstr);
 
             this.props.dispatch({type: "STICKSTRS", body: stickstr})
         }
     }
 
     render() {
-        // Jeff thought this next part needed to be added. But it seemed to make things mad, so I noted it out.
-        // 'newStickstr' is the key, and key is what we need to GET in stickstrs
-        // store.set('newStickstr', { noteTitle: this.state.noteTitle, noteBody: this.state.noteBody, noteURL: this.state.noteURL, noteTags: this.state.noteTags, created_at: this.state.created_at, updated_at: this.state.updated_at })
 
         return <div>
             <Heading />
@@ -116,7 +112,6 @@ class AddStickstr extends React.Component {
     }
 }
 
-// <button type="button" className="btn btn-success saveButton" onClick={() => this.onClick(this.props.AddStickstr)}>Save</button>
 const mapStateToProps = (redux) => {
     return {
         sharedStickstrs: redux.state.stickstrs

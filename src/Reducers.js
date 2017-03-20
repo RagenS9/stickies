@@ -6,7 +6,7 @@ import { default as storeJS } from 'store'
 // Initial shared state
 const initialSharedState = {
     stickstrs: [],
-    searchTerm: ''
+    // searchTerm: ''
 }
 
 let stickstrs = storeJS.get('stickstrs') || []
@@ -15,14 +15,6 @@ function state(state = initialSharedState, action = {}) {
     switch (action.type) {
         case 'STICKSTRS':
             return { ...state, stickstrs: action.body }
-        // case 'NOTE_UPDATE':
-        //     stickstrs[action.index] = action.body
-        //     storeJS.set('stickstrs', stickstrs)
-        //     return { ...state, stickstrs: stickstrs }
-        // case 'NOTE_DELETE':
-        //     stickstrs = stickstrs.splice(action.index, 1)
-        //     storeJS.set('stickstrs', stickstrs)
-        //     return { ...state, stickstrs: stickstrs }
         // case 'NOTE_SEARCH':
         //     return { ...state, searchTerm: action.body }
 
