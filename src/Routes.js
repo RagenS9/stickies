@@ -16,8 +16,6 @@ import Start from './components/Start';
 import AddStickstr from './components/AddStickstr';
 import EditStickstr from './components/EditStickstr';
 
-
-
 // Configure routes
 class Routes extends React.Component {
     render() {
@@ -26,7 +24,7 @@ class Routes extends React.Component {
                 <Route path="/" component={Stickstrs} />
                 <Route path="/start" component={Start} />
                 <Route path="/addstickstr" component={AddStickstr} />
-                <Route path="/editstickstr" component={EditStickstr} />
+                <Route path="/:index/editstickstr" component={EditStickstr} />
             </Router>
         </Provider>
     }

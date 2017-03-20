@@ -38,7 +38,7 @@ class AddStickstr extends React.Component {
             updated_at: now
         })
 
-        // browserHistory.push('/')
+        browserHistory.push('/')
     }
 
     addStickstr(noteTitle, noteBody, noteURL, noteTags) {
@@ -108,7 +108,7 @@ class AddStickstr extends React.Component {
                         </div>
 
                         <div className="panel-footer">
-                            <button type="button" className="btn btn-success saveButton" onClick={() => this.onClick(this.props.AddStickstr)}>Save</button>
+                            <button type="button" className="btn btn-success saveButton" onClick={this.onClick}>Save</button>
                         </div>
                     </div>
                 </div>
@@ -116,6 +116,7 @@ class AddStickstr extends React.Component {
     }
 }
 
+// <button type="button" className="btn btn-success saveButton" onClick={() => this.onClick(this.props.AddStickstr)}>Save</button>
 const mapStateToProps = (redux) => {
     return {
         sharedStickstrs: redux.state.stickstrs

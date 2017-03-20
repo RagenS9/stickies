@@ -27,21 +27,21 @@ class Stickstr extends React.Component {
         // I'm getting confused by all of the separate pages--specifically, why do we need the singular note file when the add and edit files seem to do the same thing? and where does the store.get need to go? Not sure what props does versus store stuff versus state versus just about anything else. Tried replicating the todo setup, but that obviously isn't working out so well in this project. :-/
 
         return (
-                <div className="container stickstrCardContent">
-                    <div className="panel panel-default">
-                        <div className="panel-heading">
-                            <h3 className="title">{this.props.noteTitle}</h3>
+                <div className="stickstrCardContent">
+                            <div className="panel panel-default">
+                                <div className="panel-heading">
+                                    <h3 className="title">{this.props.noteTitle}</h3>
+                                </div>
+                                <div className="panel-body">
+                                    <p className="body">{this.props.noteBody}</p>
+                                    <p className="url">{this.props.noteURL}</p>
+                                    <p className="tags">{this.props.noteTags}</p>
+                                </div>
+                                <div className="panel-footer">
+                                    <button type="button" className="btn btn-primary editButton" onClick={() => browserHistory.push('/' + this.props.index + '/editstickstr')}>Edit Stickstr</button>
+                                </div>
+                            </div>
                         </div>
-                        <div className="panel-body">
-                            <p className="body">{this.props.noteBody}</p>
-                            <p className="url">{this.props.noteURL}</p>
-                            <p className="tags">{this.props.noteTags}</p>
-                        </div>
-                        <div className="panel-footer">
-                            <button type="button" className="btn btn-primary editButton" onClick={() => browserHistory.push('/editstickstr')}>Edit Stickstr</button>
-                        </div>
-                    </div>
-                </div>
         )
     }
 }
