@@ -5,7 +5,7 @@ import moment from 'moment';
 import { connect } from 'react-redux'
 import { browserHistory } from 'react-router'
 
-let now = moment().format('YYY-MM-DD HH:mm:ss')
+let now = moment().format('YYYY-MM-DD HH:mm:ss')
 
 class EditStickstr extends React.Component {
     constructor(props) { 

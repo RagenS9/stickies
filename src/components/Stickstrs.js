@@ -56,9 +56,7 @@ class Stickstrs extends React.Component {
                 <Heading />
                 <div className="container">
                     <div className="row">
-                        <div className="col-xs-4">
                         {stickstrs}
-                        </div>
                     </div>
                 </div>
             </div>
